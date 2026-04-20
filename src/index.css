@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 12px rgba(0, 255, 136, 0.3), 0 0 24px rgba(0, 255, 136, 0.12); }
+    50% { box-shadow: 0 0 24px rgba(0, 255, 136, 0.55), 0 0 48px rgba(0, 255, 136, 0.2); }
+  }
+
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes bonce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  @keyframes beamAni {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 300%; }
+  }
+}
+
+body {
+  background: #070714;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-floatY {
+  animation: floatY 3s ease-in-out infinite;
+}
+
+.animate-bonce {
+  animation: bonce 2s infinite;
+}
+
+.animate-flash {
+  animation: flash 1.2s ease-in-out infinite;
+}
+
+.animate-beam {
+  background-size: 100% 300%;
+  animation: beamAni 2.5s linear infinite;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
